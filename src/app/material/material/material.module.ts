@@ -7,6 +7,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatChipsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

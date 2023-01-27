@@ -1,19 +1,51 @@
-<div class="row">
+
+ <div class="row" *ngIf="pokemon">
     <div class="col-md-6">
-    
+        
         <img [src]="pokemon.sprites.other?.['official-artwork']?.front_default" alt="">
     </div>
 
+
+
     <div class="col-md-6">
-        <h2>{{pokemon.name | titlecase}}</h2>
-        <h3>Nº {{pokemon.id}}</h3>
+
+        <h1 class="mt-3">{{pokemon.name | titlecase}}</h1>
+        <h3 >Nº {{pokemon.id}}</h3>
         
         <mat-divider></mat-divider>
 
-        <p>Tipo: <span *ngFor="let tipo of pokemon.types"> {{tipo.type.name | titlecase}}</span></p> 
 
+        <mat-chip-listbox>
+            <mat-chip  *ngFor="let tipo of pokemon.types" [ngStyle]="{'background-color': darColorChip(tipo.type.name) }"> {{tipo.type.name | titlecase}} </mat-chip>
+        </mat-chip-listbox>
+        <br>
+
+        <h2>Habilidad: 
+            <span *ngFor="let habilidad of pokemon.abilities" > 
+
+            {{habilidad.ability.name | titlecase}} 
+                <span class="mat-small">{{habilidad.is_hidden ?  '(oculta)' : '(común)'}}</span> 
+            </span> 
+        </h2>
+
+        <mat-divider></mat-divider>
+        <p>{{pokemonDescripcion.flavor_text_entries[0].flavor_text}}</p>
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Es FUERTE contra:</h4>
+            </div>
+
+            <div class="col-6">
+                <h4>Es DÉBIL contra;</h4>
+            </div>
+        </div>
+
+        
+
+       
     </div>
-</div>
+</div> 
 
 
 
