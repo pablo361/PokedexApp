@@ -6,13 +6,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { MaterialModule } from '../material/material/material.module';
 import { PokemonDetalleComponent } from './pages/pokemon-detalle/pokemon-detalle.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     ListadoComponent,
-    PokemonDetalleComponent
+    PokemonDetalleComponent,
+    PokemonCardComponent
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,19 @@
-<p>pokemon-detalle works!</p>
+<div class="row">
+    <div class="col-md-6">
+    
+        <img [src]="pokemon.sprites.other?.['official-artwork']?.front_default" alt="">
+    </div>
+
+    <div class="col-md-6">
+        <h2>{{pokemon.name | titlecase}}</h2>
+        <h3>Nº {{pokemon.id}}</h3>
+        
+        <mat-divider></mat-divider>
+
+        <p>Tipo: <span *ngFor="let tipo of pokemon.types"> {{tipo.type.name | titlecase}}</span></p> 
+
+    </div>
+</div>
+
+
+

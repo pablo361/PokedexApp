@@ -1,0 +1,25 @@
+
+
+img{
+    width: 70%;
+
+}
+
+
+div{
+    box-sizing: border-box;
+}
+
+mat-card{
+    box-shadow:inset 0px 0px 0px 0px #E91E63;
+    transition: all 0.3s ease-out;
+}
+
+mat-card:hover{
+    box-shadow:inset 0px 0px 0px 2px #E91E63;
+    
+    cursor: pointer;
+    /*transform: scale(1.05,1.05);*/
+    
+    
+}

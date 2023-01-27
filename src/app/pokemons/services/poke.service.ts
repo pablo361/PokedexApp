@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { Pokemon } from '../interfaces/pokemon.interface';
-import { PokemonLista } from '../interfaces/pokemonLista.interface';
+import { PokemonLista, Result } from '../interfaces/pokemonLista.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,28 @@ import { PokemonLista } from '../interfaces/pokemonLista.interface';
 export class PokeService {
 
 
-url : string = 'https://pokeapi.co/api/v2/pokemon?limit=151'
+url : string = 'https://pokeapi.co/api/v2/pokemon'
 
   constructor(private http: HttpClient) { }
 
 
   getPokemons(limit: number): Observable<PokemonLista>{
-    return this.http.get<PokemonLista>(this.url);
+    const urlPeticion = `${this.url}?limit=${limit}`
+    return this.http.get<PokemonLista>(urlPeticion);
   }
+
+  getDetallePokemon(name: string): Observable<Pokemon>{
+    const urlPeticion = `${this.url}/${name}`
+    return this.http.get<Pokemon>(urlPeticion);
+  }
+
+
+  getImagenPokemon(resultados: Result[]): Observable<Pokemon[]>{
+    const dataPokemones  : Observable<Pokemon>[] = [];
+    resultados.forEach(resultado => {
+      dataPokemones.push(this.http.get<Pokemon>(resultado.url));
+    })
+   
+    return combineLatest(dataPokemones);
+  } 
 }
