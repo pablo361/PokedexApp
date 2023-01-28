@@ -1,0 +1,10 @@
+.mi-chip{
+    background-color: red;
+display: table-cell;
+border-radius: 25px;
+text-align: center;
+height: 32px;
+width: 75px;
+vertical-align: middle;
+font-weight: normal;
+}

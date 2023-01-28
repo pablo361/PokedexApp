@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { PokemonDetalleComponent } from './pages/pokemon-detalle/pokemon-detalle.component';
+import { TipoDetalleComponent } from './pages/tipo-detalle/tipo-detalle.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,6 +16,10 @@ const routes: Routes = [{
     {
       path: ':id',
       component: PokemonDetalleComponent
+    },
+    {
+      path: 'tipo/:id',
+      component: TipoDetalleComponent
     },
     {
       path: '**',

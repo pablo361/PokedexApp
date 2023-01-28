@@ -14,10 +14,10 @@
         
         <mat-divider></mat-divider>
 
+        <div class="mt-2">
+            <app-chip-tipo class="me-2" *ngFor="let tipo of pokemon.types" [tipo]="tipo.type.name"></app-chip-tipo>
+        </div>
 
-        <mat-chip-listbox>
-            <mat-chip  *ngFor="let tipo of pokemon.types" [ngStyle]="{'background-color': darColorChip(tipo.type.name) }"> {{tipo.type.name | titlecase}} </mat-chip>
-        </mat-chip-listbox>
         <br>
 
         <h2>Habilidad: 
@@ -31,16 +31,38 @@
         <mat-divider></mat-divider>
         <p>{{pokemonDescripcion.flavor_text_entries[0].flavor_text}}</p>
 
-        <div class="row">
+         <div class="row">
             <div class="col-6">
                 <h4>Es FUERTE contra:</h4>
+                
+                <div class="mb-2">
+
+                    <div class="mb-2" *ngFor="let tipo of listaResistenciasFinal">
+    
+                    
+                        <app-chip-tipo [tipo]="tipo"></app-chip-tipo>
+    
+                      
+    
+                    </div> 
+                </div> 
             </div>
 
             <div class="col-6">
                 <h4>Es DÉBIL contra;</h4>
-            </div>
-        </div>
 
+                <div class="mb-2">
+
+                    <div class="mb-2" *ngFor="let tipo of listasDebilidadesFinal">
+    
+                    
+                        <app-chip-tipo [tipo]="tipo"></app-chip-tipo>
+                       
+    
+                    </div> 
+                </div>
+            </div>
+        </div>  
         
 
        
