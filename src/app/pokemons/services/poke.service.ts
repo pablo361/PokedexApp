@@ -64,4 +64,5 @@ url : string = 'https://pokeapi.co/api/v2/';
     //combineLatests combina los valores de todos los observables y CREA UN SOLO OBSERVABLE
     return combineLatest(peticiones)
   }
+
 }

@@ -1,1 +1,38 @@
-<p>tipo-detalle works!</p>
+<div class="row">
+    <div class="col-md-6">
+        <div class="text-center mt-5">
+
+            <img [src]="tipo.name | imagenes" [alt]="tipo.name">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1>{{tipo.name | titlecase}} type</h1>
+
+        
+        <h3 class="mb-0">Recibe 1/2 de daño de:</h3>
+        <mat-divider></mat-divider>
+        <div class="mb-2 mt-2">
+            <app-chip-tipo class="me-2" *ngFor="let resistencia of tipo.damage_relations.half_damage_from" [tipo]="resistencia.name"></app-chip-tipo>
+        </div>
+
+        <h3 class="mb-0">Recibe x2 de daño de:</h3>
+        <mat-divider></mat-divider>
+        <div class="mb-2 mt-2">
+            <app-chip-tipo class="me-2" *ngFor="let resistencia of tipo.damage_relations.double_damage_from" [tipo]="resistencia.name"></app-chip-tipo>
+        </div>
+
+
+        <h3 class="mb-0">Inflige x2 de daño a:</h3>
+        <mat-divider></mat-divider>
+        <div class="mb-2 mt-2">
+            <app-chip-tipo class="me-2" *ngFor="let resistencia of tipo.damage_relations.double_damage_to" [tipo]="resistencia.name"></app-chip-tipo>
+        </div>
+
+        <h3 class="mb-0">Inflige 1/2 de daño a:</h3>
+        <mat-divider></mat-divider>
+        <div class="mb-2 mt-2">
+            <app-chip-tipo class="me-2" *ngFor="let resistencia of tipo.damage_relations.half_damage_to" [tipo]="resistencia.name"></app-chip-tipo>
+        </div>
+    </div>
+</div>

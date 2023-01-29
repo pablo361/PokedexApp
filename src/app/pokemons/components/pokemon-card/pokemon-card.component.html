@@ -1,6 +1,6 @@
-<mat-card [routerLink]="['/pokemons',pokemon.name]">
+<mat-card [routerLink]="['/pokemons',pokemon]">
         
         <img class="mx-auto" mat-card-image src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{imagenUrl}}.png">
-        <mat-card-header class="mx-auto">{{pokemon.name | titlecase}}</mat-card-header>
+        <mat-card-header class="mx-auto">{{pokemon | titlecase}}</mat-card-header>
 
 </mat-card>

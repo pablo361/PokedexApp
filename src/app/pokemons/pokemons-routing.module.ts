@@ -18,7 +18,7 @@ const routes: Routes = [{
       component: PokemonDetalleComponent
     },
     {
-      path: 'tipo/:id',
+      path: 'tipo/:tipoId',
       component: TipoDetalleComponent
     },
     {

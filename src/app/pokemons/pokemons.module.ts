@@ -9,6 +9,7 @@ import { PokemonDetalleComponent } from './pages/pokemon-detalle/pokemon-detalle
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { TipoDetalleComponent } from './pages/tipo-detalle/tipo-detalle.component';
 import { ChipTipoComponent } from './components/chip-tipo/chip-tipo.component';
+import { ImagenesPipe } from './pipes/imagenes.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ChipTipoComponent } from './components/chip-tipo/chip-tipo.component';
     PokemonDetalleComponent,
     PokemonCardComponent,
     TipoDetalleComponent,
-    ChipTipoComponent
+    ChipTipoComponent,
+    ImagenesPipe
   ],
   imports: [
     CommonModule,

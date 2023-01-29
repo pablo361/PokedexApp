@@ -9,7 +9,8 @@ import { Result } from '../../interfaces/pokemonLista.interface';
 })
 export class PokemonCardComponent {
 
-  @Input() pokemon! : Result;
+  //@Input() pokemon! : Result;
+  @Input() pokemon : string = "";
   @Input() imagenUrl: number = 0
 
 }
