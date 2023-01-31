@@ -36,3 +36,12 @@
         </div>
     </div>
 </div>
+<mat-divider></mat-divider>
+
+<div class="row">
+    <h2>Pokemons</h2>
+    <div class="col col-md-2 col-sm-4" *ngFor="let pokemon of tipo.pokemon,let i = index">
+
+        <app-pokemon-card  [pokemon]="pokemon.pokemon"  ></app-pokemon-card>
+    </div>
+</div>

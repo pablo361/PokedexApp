@@ -1,8 +1,8 @@
 <h1>Todos</h1>
 
 <div class="row">
-    <div class="col col-md-2 mb-2" *ngFor="let pokemon of pokemones, let i = index" colspan="1" rowspan="1">
-        <app-pokemon-card [pokemon]="pokemon.name" [imagenUrl]="i + 1"></app-pokemon-card>
+    <div class="col col-md-2 col-sm-4 mb-2" *ngFor="let pokemon of pokemones" colspan="1" rowspan="1">
+         <app-pokemon-card [pokemon]="pokemon" ></app-pokemon-card>
 
     </div>
 </div>
