@@ -1,4 +1,4 @@
-export interface PokemonLista {
+export interface Lista {
     count:    number;
     next:     string;
     previous: null;

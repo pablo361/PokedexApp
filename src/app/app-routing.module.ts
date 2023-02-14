@@ -5,7 +5,12 @@ const routes: Routes = [
   {
     path: 'pokemons',
     loadChildren: ()=> import('./pokemons/pokemons.module').then(module =>module.PokemonsModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'pokemons'
   }
+
 ];
 
 @NgModule({

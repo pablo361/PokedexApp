@@ -1,10 +1,12 @@
+import { ObserversModule } from '@angular/cdk/observers';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { _getOptionScrollPosition } from '@angular/material/core';
 import { combineLatest, Observable } from 'rxjs';
 import { Pokemon,Type } from '../interfaces/pokemon.interface';
 import { PokemonDescripcion } from '../interfaces/pokemonDescripcion.interface';
-import { PokemonLista, Result } from '../interfaces/pokemonLista.interface';
+import { PokemonGeneration } from '../interfaces/pokemonGeneration.interface';
+import { Lista, Result } from '../interfaces/pokemonLista.interface';
 import { PokemonTipo } from '../interfaces/pokemonTipo.interface';
 
 @Injectable({
@@ -19,9 +21,9 @@ url : string = 'https://pokeapi.co/api/v2/';
   constructor(private http: HttpClient) { }
 
 
-  getPokemons(limit: number): Observable<PokemonLista>{
+  getPokemons(limit: number): Observable<Lista>{
     const urlPeticion = `${this.url}pokemon?limit=${limit}`
-    return this.http.get<PokemonLista>(urlPeticion);
+    return this.http.get<Lista>(urlPeticion);
   }
 
   getDetallePokemon(name: string): Observable<Pokemon>{
@@ -63,6 +65,19 @@ url : string = 'https://pokeapi.co/api/v2/';
     });
     //combineLatests combina los valores de todos los observables y CREA UN SOLO OBSERVABLE
     return combineLatest(peticiones)
+  }
+
+
+
+  getPokemonPorRegion(id: string): Observable<PokemonGeneration>{
+    const urlPeticion = `${this.url}generation/${id}`
+    return this.http.get<PokemonGeneration>(urlPeticion);
+  }
+
+
+  getTodosLosTipos(): Observable<Lista>{
+    const urlPeticion = `${this.url}type/`;
+    return this.http.get<Lista>(urlPeticion);
   }
 
 }

@@ -1,5 +1,33 @@
 <h1>Todos</h1>
 
+
+<div class="row">
+    <div class="col-md-4">
+        <mat-form-field appearance="fill">
+            <mat-label>Regiones</mat-label>
+            <mat-select (selectionChange)="cambioRegion()" [formControl]="region" name="region">
+                <mat-option selected>Todas las Regiones</mat-option>
+                <mat-option *ngFor="let region of regiones" [value]="region.id">{{region.name}}</mat-option>
+            </mat-select>
+    
+            
+        </mat-form-field>
+    </div>
+
+    <div class="col-md-4">
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo</mat-label>
+            <mat-select (selectionChange)="cambioTipo()" [formControl]="tipo" name="tipo">
+                <mat-option selected>Todas</mat-option>
+                <mat-option *ngFor="let tipo of listaTipos" [value]="tipo.name">{{tipo.name | titlecase}}</mat-option>
+            </mat-select>
+    
+            
+        </mat-form-field>
+    </div>
+
+</div>
+
 <div class="row">
     <div class="col col-md-2 col-sm-4 mb-2" *ngFor="let pokemon of pokemones" colspan="1" rowspan="1">
          <app-pokemon-card [pokemon]="pokemon" ></app-pokemon-card>

@@ -11,6 +11,7 @@ import { TipoDetalleComponent } from './pages/tipo-detalle/tipo-detalle.componen
 import { ChipTipoComponent } from './components/chip-tipo/chip-tipo.component';
 import { ImagenesPipe } from './pipes/imagenes.pipe';
 import { ImagenesPokemonPipe } from './pipes/imagenes-pokemon.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ImagenesPokemonPipe } from './pipes/imagenes-pokemon.pipe';
   imports: [
     CommonModule,
     PokemonsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class PokemonsModule { }

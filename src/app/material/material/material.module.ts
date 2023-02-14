@@ -9,6 +9,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatListModule,
     MatGridListModule,
     MatChipsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }
